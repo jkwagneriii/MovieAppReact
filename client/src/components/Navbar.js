@@ -28,7 +28,7 @@ import avatar from '../images/popcorn.jpg'
 const useStyles = makeStyles(theme=>({
     menuSliderContainer: {
         width: 250,
-        background: "#EECB9D",
+        background: "black",
         height: "100%"
     },
     avatar: {
@@ -81,7 +81,7 @@ const Navbar = () => {
         component="div"
         onClick={toggleSlider(slider, false)}
         >
-            <Avatar className={classes.avatar} src={avatar} alt="Jake Wagner" />
+            <Avatar className={classes.avatar} src={avatar} alt="Popcorn and Sodie Pop" />
             <Divider />
             <List>
                 {menuItems.map((lsItem, key)=>(
@@ -99,7 +99,7 @@ const Navbar = () => {
     return (
         <>
         <Box component="nav">
-            <AppBar position="static" style={{background: '#3E3031'}}>
+            <AppBar position="static" style={{background: 'black', opacity: 0.75}}>
                 <Toolbar>
                     <IconButton onClick={toggleSlider("right", true)}>
                         <ArrowBack style={{color: '#EA082E'}}/>
