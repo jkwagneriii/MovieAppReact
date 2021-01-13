@@ -17,11 +17,12 @@ Box
 } from '@material-ui/core'
 import {
 ArrowBack,
-AssignmentInd,
 Home,
 Apps,
 ContactMail    
 } from '@material-ui/icons'
+import SearchIcon from '@material-ui/icons/Search';
+import FavoriteIcon from '@material-ui/icons/Favorite';
 import avatar from '../images/popcorn.jpg'
 
 // CSS STYLING
@@ -49,14 +50,14 @@ const menuItems = [
         listPath: "/"
     },
     {
-        listIcon: <AssignmentInd/>,
-        listText: "Search",
+        listIcon: <SearchIcon/>,
+        listText: "Search Movies",
         listPath: "/search"
     },
     // {
-    //     listIcon: <Apps/>,
-    //     listText: "Portfolio",
-    //     listPath: "/portfolio"
+    //     listIcon: <FavoriteIcon/>,
+    //     listText: "Top 5",
+    //     listPath: "/topfive"
     // },
     // {
     //     listIcon: <ContactMail/>,
