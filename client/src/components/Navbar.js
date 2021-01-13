@@ -22,7 +22,7 @@ Home,
 Apps,
 ContactMail    
 } from '@material-ui/icons'
-import avatar from '../images/popcorn.png'
+import avatar from '../images/popcorn.jpg'
 
 // CSS STYLING
 const useStyles = makeStyles(theme=>({
