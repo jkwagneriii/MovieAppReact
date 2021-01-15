@@ -51,7 +51,14 @@ const Add = () => {
 
         setQuery(e.target.value);
 
-        fetch(`https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1&include_adult=false&query=${e.target.value}`)
+        fetch({
+            protocol: "https",
+            hostname: "//api.themoviedb.org",
+            path: `/3/search/movie?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1&include_adult=false&query=${e.target.value}`,
+            toString: function () {
+                return `${this.protocol}://${this.hostname}${this.path}`;
+            }
+        })
         .then((res) => res.json())
         .then(data => {
             if(!data.errors){
