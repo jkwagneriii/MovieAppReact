@@ -40,6 +40,8 @@ const useStyles = makeStyles(theme=> ({
     }
 }))
 
+
+
 const Add = () => {
     const [query, setQuery] = useState("");
     const [results, setResults] = useState([]);
@@ -83,7 +85,7 @@ const Add = () => {
 
                 </Grid>
                 <Grid className={classes.cleaning} container item justify="center" xs={6} sm={11} md={12}>
-                   {results.length > 0 && (
+                   
                        <Box>
                            {results.map(movie => (
                               <Box key={movie.id}>
@@ -91,7 +93,7 @@ const Add = () => {
                               </Box> 
                            ))}
                        </Box>
-                   )}
+                   
                 </Grid>
             </Box>
         </>
