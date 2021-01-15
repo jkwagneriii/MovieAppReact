@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { withStyles, makeStyles } from '@material-ui/core/styles'
 import Navbar from './Navbar'
-import {Box, TextField, Typography, Grid, Button } from '@material-ui/core'
+import ResultCard from './ResultCard'
+import {Box, TextField, Typography, Grid, Button, List, ListItem } from '@material-ui/core'
 
 const InputField = withStyles({
     root: {
@@ -37,6 +38,25 @@ const useStyles = makeStyles(theme=> ({
 }))
 
 const Add = () => {
+    const [query, setQuery] = useState("");
+    const [results, setResults] = useState([]);
+
+    const onChange = (e) => {
+        e.preventDefault();
+
+        setQuery(e.target.value);
+
+        fetch(`https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1&include_adult=false&query=${e.target.value}`)
+        .then((res) => res.json())
+        .then(data => {
+            if(!data.errors){
+                setResults(data.results)
+            } else {
+                setResults([])
+            }
+        });
+    }
+
     const classes = useStyles()
     return (
         <>
@@ -53,8 +73,20 @@ const Add = () => {
                         inputProps={{style:{color: 'white'}}}
                         variant="outlined"
                         margin="dense"
+                        value={query}
+                        onChange={onChange}
                         />
                     </Box>
+
+                   {results.length > 0 && (
+                       <ul>
+                           {results.map(movie => (
+                              <li key={movie.id}>
+                                  <ResultCard movie={movie}/>
+                              </li> 
+                           ))}
+                       </ul>
+                   )}
                 </Grid>
             </Box>
         </>
