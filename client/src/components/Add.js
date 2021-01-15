@@ -36,7 +36,7 @@ const useStyles = makeStyles(theme=> ({
         fontSize: "20px",
     },
     cleaning: {
-        margin: "2rem 8rem"
+        margin: "2rem 0rem"
     }
 }))
 
@@ -91,7 +91,7 @@ const Add = () => {
                     </Box>
 
                 </Grid>
-                <Grid className={classes.cleaning} container item justify="center" xs={6} sm={11} md={12}>
+                <Grid className={classes.cleaning} container item justify="center" xs={12} sm={12} md={12}>
                    
                        <Box>
                            {results && results.map(movie => (

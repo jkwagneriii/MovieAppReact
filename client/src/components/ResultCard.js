@@ -22,7 +22,8 @@ const useStyles = makeStyles({
     cardContainer: {
         padding: "5px",
         margin: "10px 10px",
-        background: "white"
+        background: "white",
+        minWidth: "300px"
     },
     button: {
         background: "#EA082E"
@@ -34,7 +35,7 @@ const ResultCard = ({ movie }) => {
 
     return (
         <>
-            <Grid item xs={12} sm={8} md={6}>
+            <Grid item xs={12} sm={12} md={12}>
                 {/* Project 1  */}
                 <Card className={classes.cardContainer}>
                     <CardActionArea>
@@ -43,7 +44,7 @@ const ResultCard = ({ movie }) => {
                                 component="img"
                                 alt={`${movie.title} Poster`}
                                 title={`${movie.title} Poster`}
-                                height="200"
+                                height="300"
                                 src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
                                 className={classes.poster} />
                         ) : (

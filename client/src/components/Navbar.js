@@ -54,11 +54,11 @@ const menuItems = [
         listText: "Search Movies",
         listPath: "/search"
     },
-    // {
-    //     listIcon: <FavoriteIcon/>,
-    //     listText: "Top 5",
-    //     listPath: "/topfive"
-    // },
+    {
+        listIcon: <FavoriteIcon/>,
+        listText: "Top 5",
+        listPath: "/topfive"
+    },
     // {
     //     listIcon: <ContactMail/>,
     //     listText: "Contact",
