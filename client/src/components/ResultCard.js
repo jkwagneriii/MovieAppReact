@@ -34,7 +34,11 @@ const useStyles = makeStyles({
 const ResultCard = ({ movie }) => {
     const classes = useStyles();
 
-    const {addMovieToWatchlist} = useContext(GlobalContext);
+    const {addMovieToWatchlist, watchlist} = useContext(GlobalContext);
+
+    let storedMovie = watchlist.find(o => o.id === movie.id);
+
+    const watchlistDisabled = storedMovie ? true : false;
 
     return (
         <>
@@ -69,6 +73,7 @@ const ResultCard = ({ movie }) => {
                     <CardActions>
                         <Button 
                         size="medium" 
+                        disabled={watchlistDisabled}
                         className={classes.button}
                         onClick={() => addMovieToWatchlist(movie)}
                         >
