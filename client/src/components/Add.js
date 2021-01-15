@@ -35,6 +35,9 @@ const useStyles = makeStyles(theme=> ({
         fontFamily: "Arial",
         fontSize: "20px",
     },
+    cleaning: {
+        margin: "2rem 8rem"
+    }
 }))
 
 const Add = () => {
@@ -62,7 +65,7 @@ const Add = () => {
         <>
             <Navbar />
             <Box component="div">
-                <Grid container justify="center">
+                <Grid container justify="center" xs={12} sm={12} md={12}>
                     <Box component="form">
                         <Typography className={classes.title} variant="overline" style={{color: 'white', textAlign: 'center'}}>
                             Search 
@@ -78,14 +81,16 @@ const Add = () => {
                         />
                     </Box>
 
+                </Grid>
+                <Grid className={classes.cleaning} container justify="center" xs={6} sm={11} md={12}>
                    {results.length > 0 && (
-                       <ul>
+                       <Box>
                            {results.map(movie => (
-                              <li key={movie.id}>
+                              <Box key={movie.id}>
                                   <ResultCard movie={movie}/>
-                              </li> 
+                              </Box> 
                            ))}
-                       </ul>
+                       </Box>
                    )}
                 </Grid>
             </Box>

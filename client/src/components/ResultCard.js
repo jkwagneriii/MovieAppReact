@@ -18,15 +18,14 @@ const useStyles = makeStyles({
     //     // background: "#b2af97",
     //     height: "100%"
     // },
-    // cardContainer: {
-    //     maxwidth: 300,
-    //     padding: "3rem",
-    //     margin: "5rem 2rem",
-    //     background: "#efd5b6"
-    // },
-    // poster: {
-    //     height: "100%"
-    // }
+    cardContainer: {
+        padding: "5px",
+        margin: "10px 10px",
+        background: "white"
+    },
+    button: {
+        background: "#EA082E"
+    },
 })
 
 const ResultCard = ({ movie }) => {
@@ -43,7 +42,7 @@ const ResultCard = ({ movie }) => {
                                 component="img"
                                 alt={`${movie.title} Poster`}
                                 title={`${movie.title} Poster`}
-                                height="100%"
+                                height="200"
                                 src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
                                 className={classes.poster} />
                         ) : (
@@ -63,7 +62,7 @@ const ResultCard = ({ movie }) => {
                         </CardContent>
                     </CardActionArea>
                     <CardActions>
-                        <Button size="small" color="#758877">
+                        <Button size="medium" className={classes.button}>
                             Nominate
                         </Button>
                     </CardActions>
