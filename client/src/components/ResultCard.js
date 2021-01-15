@@ -12,6 +12,7 @@ CardMedia,
 Button,
 Typography
 } from '@material-ui/core'
+import noImage from '../images/noImage.jpg'
 
 const useStyles = makeStyles({
     // mainContainer: {
@@ -48,14 +49,14 @@ const ResultCard = ({ movie }) => {
                         ) : (
                                 // FIND FILLER IMAGE 
                             <CardMedia
-                                alt={`${movie.title} Poster`}
-                                image={`https://image.tmdb.org/t/p/w200${movie.poster_path}`} />
+                                alt="Missing Image"
+                                image={noImage} />
                             )}
                         <CardContent>
                             <Typography className={classes.title} gutterBottom variant="h5">
                                 {movie.title}
                             </Typography>
-                            <Typography variant="body2" color="red">
+                            <Typography variant="body2">
                                 {movie.release_date ? movie.release_date.substring(0, 4) : "-"}
                             </Typography>
                             <Divider />

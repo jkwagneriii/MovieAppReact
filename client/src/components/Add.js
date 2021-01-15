@@ -65,7 +65,7 @@ const Add = () => {
         <>
             <Navbar />
             <Box component="div">
-                <Grid container justify="center" xs={12} sm={12} md={12}>
+                <Grid container item justify="center" xs={12} sm={12} md={12}>
                     <Box component="form">
                         <Typography className={classes.title} variant="overline" style={{color: 'white', textAlign: 'center'}}>
                             Search 
@@ -82,7 +82,7 @@ const Add = () => {
                     </Box>
 
                 </Grid>
-                <Grid className={classes.cleaning} container justify="center" xs={6} sm={11} md={12}>
+                <Grid className={classes.cleaning} container item justify="center" xs={6} sm={11} md={12}>
                    {results.length > 0 && (
                        <Box>
                            {results.map(movie => (
