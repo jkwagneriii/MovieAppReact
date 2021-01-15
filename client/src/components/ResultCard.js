@@ -1,4 +1,5 @@
-import React from 'react'
+import React, {useContext} from 'react'
+import {GlobalContext} from '../context/GlobalState'
 import {makeStyles} from '@material-ui/core/styles'
 import {
 Box,
@@ -31,7 +32,9 @@ const useStyles = makeStyles({
 })
 
 const ResultCard = ({ movie }) => {
-    const classes = useStyles()
+    const classes = useStyles();
+
+    const {addMovieToWatchlist} = useContext(GlobalContext);
 
     return (
         <>
@@ -64,7 +67,11 @@ const ResultCard = ({ movie }) => {
                         </CardContent>
                     </CardActionArea>
                     <CardActions>
-                        <Button size="medium" className={classes.button}>
+                        <Button 
+                        size="medium" 
+                        className={classes.button}
+                        onClick={() => addMovieToWatchlist(movie)}
+                        >
                             Nominate
                         </Button>
                     </CardActions>
