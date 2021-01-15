@@ -12,6 +12,7 @@ CardMedia,
 Button,
 Typography
 } from '@material-ui/core'
+import MovieControls from './MovieControls'
 import noImage from '../images/noImage.jpg'
 
 const useStyles = makeStyles({
@@ -20,11 +21,10 @@ const useStyles = makeStyles({
     //     height: "100%"
     // },
     cardContainer: {
-        padding: "5px",
+        padding: "10px",
         margin: "10px 10px",
         background: "white",
-        minWidth: "300px",
-        maxWidth: "300px",
+        maxWidth: "225px"
     },
     // button: {
     //     background: "#EA082E"
@@ -36,7 +36,6 @@ const MovieCard = ({ movie, type }) => {
 
     return (
         <>
-            <div className="movie-card">
             <Card className={classes.cardContainer}>
                     <CardActionArea>
                         {movie.poster_path ? (
@@ -63,6 +62,7 @@ const MovieCard = ({ movie, type }) => {
                             <Divider />
                         </CardContent> */}
                     </CardActionArea>
+                    <MovieControls type={type} movie={movie}/>
                     {/* <CardActions>
                         <Button 
                         size="medium" 
@@ -74,7 +74,6 @@ const MovieCard = ({ movie, type }) => {
                         </Button>
                     </CardActions> */}
                 </Card>
-            </div>
         </>
     )
 }

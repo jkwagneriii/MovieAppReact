@@ -1,31 +1,73 @@
 import React, {useContext} from 'react'
 import {GlobalContext} from '../context/GlobalState'
+import {makeStyles} from '@material-ui/core/styles'
+import {
+Box,
+Divider,
+Grid,
+Card,
+CardActionArea,
+CardActions,
+CardContent,
+CardMedia,
+Button,
+Typography
+} from '@material-ui/core'
 import Navbar from './Navbar'
 import MovieCard from './MovieCard';
 
+const useStyles = makeStyles({
+    movieCards: {
+        // background: "#b2af97",
+        display: "block",
+        margin: "auto auto"
+        
+    },
+    header: {
+        color: "white",
+        display: "block",
+        margin: "auto auto",
+        fontSize: "25px",
+    }
+    // button: {
+    //     background: "#EA082E"
+    // },
+})
+
 const Watchlist = () => {
+    const classes = useStyles();
+
     const {watchlist} = useContext(GlobalContext);
 
     return (
         <>
             <Navbar />
-            <div className="movie-page">
-                <div className="container">
-                    <div className="header">
-                        <h1 className="heading">My Nominations</h1>
-                    </div>
+            <Box component="div">
+                <Grid container alignContent="center">
+                    <Grid container direction="row" alignContent="center">
+                    {/* <Box component="header" > */}
+                        <Typography variant="caption" className={classes.header}>
+                            TOP 5 NOMINATIONS
+                        </Typography>
+                    {/* </Box> */}
+                    </Grid>
+
                     
                     {watchlist.length > 0 ? (
-                    <div className="movie-grid">
+                    <Grid  direction="row" container item justify="center" xs={12} sm={12} md={12}>    
+                    {/* <Box> */}
                         {watchlist.map(movie => (
-                            <MovieCard movie={movie} type="watchlist" />
+                            <MovieCard className={classes.movieCards} movie={movie} type="watchlist" />
                         ))}
-                    </div>
+                    {/* </Box> */}
+                    </Grid>
                     ) : (
-                        <h2>No Nominated Movies. Add some!!!</h2>
+                        <Typography>
+                            No Nominated Movies. Add some!!!
+                        </Typography>
                     )}
-                </div>
-            </div>
+                </Grid>
+            </Box>
         </>
     )
 }
