@@ -1,16 +1,8 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import {
-    Box,
-    Divider,
-    Grid,
-    Card,
-    CardActionArea,
-    CardActions,
-    CardContent,
-    CardMedia,
-    Button,
-    Typography
+Box,
+Button,
 } from '@material-ui/core'
 import DeleteIcon from '@material-ui/icons/Delete';
 

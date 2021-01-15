@@ -2,7 +2,6 @@ import React, {useContext} from 'react'
 import {GlobalContext} from '../context/GlobalState'
 import {makeStyles} from '@material-ui/core/styles'
 import {
-Box,
 Divider,
 Grid,
 Card,

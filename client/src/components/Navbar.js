@@ -18,8 +18,6 @@ Box
 import {
 ArrowBack,
 Home,
-Apps,
-ContactMail    
 } from '@material-ui/icons'
 import SearchIcon from '@material-ui/icons/Search';
 import FavoriteIcon from '@material-ui/icons/Favorite';

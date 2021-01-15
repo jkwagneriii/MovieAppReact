@@ -3,14 +3,7 @@ import {GlobalContext} from '../context/GlobalState'
 import {makeStyles} from '@material-ui/core/styles'
 import {
 Box,
-Divider,
 Grid,
-Card,
-CardActionArea,
-CardActions,
-CardContent,
-CardMedia,
-Button,
 Typography
 } from '@material-ui/core'
 import Navbar from './Navbar'

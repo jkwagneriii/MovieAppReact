@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { withStyles, makeStyles } from '@material-ui/core/styles'
 import Navbar from './Navbar'
 import ResultCard from './ResultCard'
-import {Box, TextField, Typography, Grid, Button, List, ListItem } from '@material-ui/core'
+import {Box, TextField, Typography, Grid } from '@material-ui/core'
 
 const InputField = withStyles({
     root: {
