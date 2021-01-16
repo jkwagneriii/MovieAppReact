@@ -25,5 +25,7 @@ This is a mobile first webpage application that can search TMDB for movies, and 
 ## Additional Questions
 If you have any questions about the project or would like to contact me, please reach out through GitHub or [LinkedIn](https://www.linkedin.com/in/jake-wagner-iii/).
 
+![Movie App Title Preview](https://media.giphy.com/media/o7ruPV6WPTAn6DaQpC/giphy.gif)
+
 
 
