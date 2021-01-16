@@ -12,13 +12,22 @@ CardMedia,
 Button,
 Typography
 } from '@material-ui/core'
+// import { toast } from 'react-toastify'
+// import 'react-toastify/dist/ReactToastify.css'
+import Typed from "react-typed"
 import noImage from '../images/noImage.jpg'
 
 const useStyles = makeStyles({
-    // mainContainer: {
-    //     // background: "#b2af97",
-    //     height: "100%"
-    // },
+    full: {
+        background: "#EA082E",
+        height: "30px",
+        justifyContent: "center",
+        padding: "5px",
+        boxShadow: "2px 2px"
+    },
+    fullTitle: {
+        fontSize: "20px"
+    },
     cardContainer: {
         padding: "5px",
         margin: "10px 10px",
@@ -31,6 +40,8 @@ const useStyles = makeStyles({
     },
 })
 
+// toast.configure()
+
 const ResultCard = ({ movie }) => {
     const classes = useStyles();
 
@@ -39,6 +50,10 @@ const ResultCard = ({ movie }) => {
     let storedMovie = watchlist.find(o => o.id === movie.id);
 
     const watchlistDisabled = storedMovie ? true : false;
+
+    // const notify = () => {
+    //     toast('Nominations Full!')
+    // }
 
     return (
         <>
@@ -71,6 +86,7 @@ const ResultCard = ({ movie }) => {
                         </CardContent>
                     </CardActionArea>
                     <CardActions>
+                        {watchlist.length < 5 ? (
                         <Button 
                         size="medium" 
                         disabled={watchlistDisabled}
@@ -79,6 +95,17 @@ const ResultCard = ({ movie }) => {
                         >
                             Nominate
                         </Button>
+                        ) : (
+                            <Card className={classes.full}>
+                                    <Typography className={classes.fullTitle} variant="h5">
+                                        <Typed
+                                        strings={["nominations full"]}
+                                        typeSpeed={50}
+                                        backSpeed={50}
+                                        loop />
+                                    </Typography>
+                            </Card>
+                        )}
                     </CardActions>
                 </Card>
             </Grid>
