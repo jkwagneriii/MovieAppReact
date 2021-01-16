@@ -7,7 +7,7 @@ Grid,
 Box
 } from "@material-ui/core"
 import Typed from "react-typed"
-import avatar from '../images/popcorn.jpg'
+import avatar from '../images/popcorn.png'
 
 // CSS STYLES
 const useStyles = makeStyles(theme=> ({

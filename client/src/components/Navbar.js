@@ -21,7 +21,7 @@ Home,
 } from '@material-ui/icons'
 import SearchIcon from '@material-ui/icons/Search';
 import FavoriteIcon from '@material-ui/icons/Favorite';
-import avatar from '../images/popcorn.jpg'
+import avatar from '../images/popcorn.png'
 
 // CSS STYLING
 const useStyles = makeStyles(theme=>({
