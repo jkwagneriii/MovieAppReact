@@ -1,4 +1,5 @@
 # Movie Nomination App
+## The Shoppies
  ```Full-Stack Web Development```
 
 ![Movie App Preview](https://media.giphy.com/media/AtRDoYyRD1agOamjPn/giphy.gif)
