@@ -62,7 +62,7 @@ const Watchlist = () => {
                         <Grid direction="row" container item justify="center" xs={12} sm={12} md={12}>
                             {/* <Box> */}
                             {watchlist.map(movie => (
-                                <MovieCard key={key} className={classes.movieCards} movie={movie} type="watchlist" />
+                                <MovieCard  className={classes.movieCards} movie={movie} type="watchlist" />
                             ))}
                             {/* </Box> */}
                         </Grid>
