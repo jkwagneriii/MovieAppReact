@@ -6,7 +6,7 @@
  
 
 ## Description 
-This is a mobile first webpage application that can search TMDB for movies, and allow the user to save their favorite films they feel should be up for nomination. The user can save these nominations to their local storage as well as remove nominees from their nomination list.
+This is a mobile first web application that can search TMDB for movies, and allows the user to save their favorite films they feel should be up for nomination. The user can save these nominations to their local storage as well as remove nominees from their nomination list.
 
 *Technologies used:*
 * [React](https://reactjs.org/)
