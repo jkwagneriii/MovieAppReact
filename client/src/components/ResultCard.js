@@ -23,7 +23,8 @@ const useStyles = makeStyles({
         padding: "5px",
         margin: "10px 10px",
         background: "white",
-        minWidth: "300px"
+        minWidth: "300px",
+        maxWidth: "300px",
     },
     button: {
         background: "#EA082E"

@@ -23,15 +23,17 @@ const useStyles = makeStyles({
         marginTop: "30px",
         margin: "auto auto",
         fontSize: "25px",
+        fontWeight: "bold"
     },
     noNom: {
         color: "black",
         display: "block",
         margin: "auto auto",
         padding: "7px",
-        fontSize: "25px",
+        fontSize: "20px",
         backgroundColor: "#EA082E",
-        borderRadius: "30px"
+        borderRadius: "30px",
+        fontVariant: "small-caps"
     },
 })
 
@@ -39,6 +41,8 @@ const Watchlist = () => {
     const classes = useStyles();
 
     const { watchlist } = useContext(GlobalContext);
+
+    const key = Math.random().toString(36).substr(2, 9)
 
     return (
         <>
@@ -58,7 +62,7 @@ const Watchlist = () => {
                         <Grid direction="row" container item justify="center" xs={12} sm={12} md={12}>
                             {/* <Box> */}
                             {watchlist.map(movie => (
-                                <MovieCard className={classes.movieCards} movie={movie} type="watchlist" />
+                                <MovieCard key={key} className={classes.movieCards} movie={movie} type="watchlist" />
                             ))}
                             {/* </Box> */}
                         </Grid>
