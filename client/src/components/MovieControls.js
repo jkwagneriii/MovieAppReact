@@ -1,4 +1,5 @@
-import React from 'react'
+import React, {useContext} from 'react'
+import { GlobalContext } from '../context/GlobalState'
 import { makeStyles } from '@material-ui/core/styles'
 import {
 Box,
@@ -25,13 +26,17 @@ const useStyles = makeStyles({
 
 const MovieControls = ({ movie, type }) => {
     const classes = useStyles();
+ 
+    const { removeMovieFromWatchlist } = useContext(GlobalContext);
 
     return (
         <>
             <Box>
                 {type === 'watchlist' && (
                     <>
-                        <Button className={classes.delete}>
+                        <Button 
+                        className={classes.delete}
+                        onClick={() => removeMovieFromWatchlist(movie.id)}>
                             <DeleteIcon/>
                         </Button>
                     </>
